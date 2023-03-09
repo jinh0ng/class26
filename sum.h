@@ -10,5 +10,5 @@
 	}
 	return res;
 }*/
-
+int sum(int n);
 #endif
