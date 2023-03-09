@@ -10,8 +10,3 @@ int sum(int n){
 	}
 	return res;
 }
-
-int main(){
-
-	return 0;
-}
