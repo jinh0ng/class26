@@ -72,7 +72,8 @@ void print_data(const uint8_t *data, uint8_t data_base, uint8_t data_len){
 		printf("Empty Data");
 
 	for(int i = 0; i < data_len; i++){
-		printf("%x", data[data_base + i]);
+		if(data[data_base + i] != 0)
+			printf("%x", data[data_base + i]);
 	}
 
 	return;
@@ -147,7 +148,7 @@ int main(int argc, char* argv[]) {
 		print_tcp(tcp_hdr);
 
 		//Data
-		uint8_t data_base = sizeof(struct libnet_ethernet_hdr) + sizeof(struct libnet_ipv4_hdr) + sizeof(struct libnet_tcp_hdr);
+		uint8_t data_base = sizeof(struct libnet_ethernet_hdr) + ipv4_hdr->ip_hl*4 + tcp_hdr->th_off*4;
 		uint8_t data_len = 10;
 		print_data(packet, data_base, data_len);
 
