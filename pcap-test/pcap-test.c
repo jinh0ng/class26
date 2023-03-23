@@ -148,7 +148,6 @@ int main(int argc, char* argv[]) {
 
 		//Data
 		uint8_t data_base = sizeof(struct libnet_ethernet_hdr) + sizeof(struct libnet_ipv4_hdr) + sizeof(struct libnet_tcp_hdr);
-		//uint8_t data_len = ntohs(ipv4_hdr->ip_len) - sizeof(ipv4_hdr) - sizeof(tcp_hdr);
 		uint8_t data_len = 10;
 		print_data(packet, data_base, data_len);
 
